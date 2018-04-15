@@ -59,14 +59,14 @@ class Stopwatch {
     }
 
     addResult() {
-        let element = document.createElement('li');
+        const element = document.createElement('li');
         element.innerHTML = `${pad0(this.times.minutes)}:${pad0(this.times.seconds)}:${pad0(Math.floor(this.times.miliseconds))}`;
         document.querySelector('.results').appendChild(element);
     }
 
     clearResults() {
         const list = document.querySelector('.results').querySelectorAll('li');
-        var listArr = Array.from(list);
+        const listArr = Array.from(list);
 
         listArr.forEach(function (el) {
             document.querySelector('.results').removeChild(el);
@@ -86,17 +86,17 @@ const stopwatch = new Stopwatch(
     document.querySelector('.stopwatch'));
 
 // Listeners
-let startButton = document.getElementById('start');
+const startButton = document.getElementById('start');
 startButton.addEventListener('click', () => stopwatch.start());
 
-let stopButton = document.getElementById('stop');
+const stopButton = document.getElementById('stop');
 stopButton.addEventListener('click', () => stopwatch.stop());
 
-let resetButton = document.getElementById('reset');
+const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', () => stopwatch.resetStoper());
 
-let resButton = document.getElementById('res');
+const resButton = document.getElementById('res');
 resButton.addEventListener('click', () => stopwatch.addResult());
 
-let clearButton = document.getElementById('clear');
+const clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', () => stopwatch.clearResults());
